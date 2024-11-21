@@ -18,8 +18,9 @@ import javax.swing.JOptionPane;
  */
 public class Koneksi {
     static Connection conn;
+
     
-    public static Connection ConnectDB(){
+ public static Connection ConnectDB(){
         try {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
@@ -27,7 +28,7 @@ public class Koneksi {
                 Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/restoran_app","root","");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/root/");
             return conn;
            
         } catch (SQLException ex) {
