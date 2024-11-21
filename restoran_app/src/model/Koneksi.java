@@ -17,24 +17,29 @@ import javax.swing.JOptionPane;
  * @author Client
  */
 public class Koneksi {
-    static Connection conn;
+       static Connection conn;
+
+    public static Connection ConnectDB() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/indomaret_db", "root", "");
+
+            return conn;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            return null;
+        }
+    }
+    
+    public static void putusKoneksi(){
+        try {
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     
- public static Connection ConnectDB(){
-        try {
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/root/");
-            return conn;
-           
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Koneksi gagall");
-        }
-         return null;
     }
    
 }
