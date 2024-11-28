@@ -90,6 +90,11 @@ public class Login extends javax.swing.JFrame {
                 BloginMouseClicked(evt);
             }
         });
+        Blogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BloginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,8 +137,10 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BloginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BloginMouseClicked
-        // TODO add your handling code here:
-          // TODO add your handling code here:
+       
+    }//GEN-LAST:event_BloginMouseClicked
+
+    private void BloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloginActionPerformed
         String username = Tusername.getText();
         String password = Tpassword.getText();
 
@@ -162,7 +169,7 @@ public class Login extends javax.swing.JFrame {
             //            if()
         } catch (SQLException ex) {
         }
-    }//GEN-LAST:event_BloginMouseClicked
+    }//GEN-LAST:event_BloginActionPerformed
 
     /**
      * @param args the command line arguments
